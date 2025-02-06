@@ -1,14 +1,13 @@
-// True constants
-const API_KEY = "3f1d93be781264bd8cc85d29d3f67c32"; // Your API key
+const API_KEY = "3f1d93be781264bd8cc85d29d3f67c32";
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 const FORECAST_BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
-const cityId = 2673730; // Replace with the city ID you want to use (example: 524901 for Moscow)
+const cityId = 2673730; // My city code - Stockholm 
 
-// Create URL for current weather using city ID
+// URL for current weather using city ID 
 const weatherURL = `${BASE_URL}?id=${cityId}&units=metric&APPID=${API_KEY}`;
 
-// Fetch current weather data
+// Fetching current weather data
 fetch(weatherURL)
     .then(response => response.json())
     .then(data => {
@@ -30,10 +29,10 @@ fetch(weatherURL)
         console.error("Error fetching weather data:", error);
     });
 
-// Create URL for 4-day forecast using city ID
+// URL for 4-day forecast using city ID
 const forecastURL = `${FORECAST_BASE_URL}?id=${cityId}&units=metric&APPID=${API_KEY}`;
 
-// Fetch 4-day forecast data
+// Fetching 4-day forecast data
 fetch(forecastURL)
     .then(response => response.json())
     .then(data => {
@@ -72,6 +71,6 @@ fetch(forecastURL)
         });
     })
     .catch(error => {
-        document.getElementById("error").innerText = "Something went wrong.";
+        document.getElementById("error").innerText = "Oops something went wrong!"; //This is the error message
         console.error("Error fetching forecast data:", error);
     });
