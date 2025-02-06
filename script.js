@@ -1,4 +1,4 @@
-const API_KEY = "3f1d93be781264bd8cc85d29d3f67c32";
+const API_KEY = import.meta.env.VITE_API_KEY; // Use environment variable for API Key
 const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 const FORECAST_BASE_URL = "https://api.openweathermap.org/data/2.5/forecast";
 
